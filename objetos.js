@@ -36,3 +36,6 @@ function auto(marca, modelo, annio) {
 var autoNuevo = new auto("tesla", "Model 3", 2020) //new genera una nueva instancia en la funcion contructora auto()
 var autoNuevo2 = new auto("Tesla", "Model X", 2018)
 var autoNuevo3 = new auto("toyota", "corolla", 2020)
+// Object.keys(array) combierte los nombres de un objeto en arrays de nombres
+// Object.values(array) combierte los valores de un objeto en arrays de valores
+// Object.entries(array) combierte en un array de nombre y valor a cada uno, y lo situa dentro de un arrays 

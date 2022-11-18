@@ -18,3 +18,6 @@ var borrarfruta = fruta.shift()
 
 var posicion = frutas.indexOf("Cereza")
 // .indexOf llama la posion del elemnto que se esta llamando
+
+var posiciondelafruta = frutas.find("Platano")
+// .find llama al elemento
