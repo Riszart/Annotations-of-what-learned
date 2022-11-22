@@ -1,5 +1,5 @@
 const PromedioMedianaModa = {}
-PromedioMedianaModa.espar =  function esPar(lista){
+PromedioMedianaModa.esPar =  function esPar(lista){
     return !(lista.length % 2)
     // --%-- este simbolo debuelve el residuo de una divicion se puede usar para saber si es par o impar
 }
@@ -7,8 +7,8 @@ PromedioMedianaModa.esImpar = function esImpar(lista){
     return lista.length % 2
 }
 PromedioMedianaModa.calcularMediana = function calcularMediana(listaDesordenada){
-    const lista = ordenarLista(listaDesordenada)
-    const listaEsPar = esPar(lista)
+    const lista = PromedioMedianaModa.ordenarLista(listaDesordenada);
+    const listaEsPar = PromedioMedianaModa.esPar(lista)
     if(listaEsPar){
         const indexMitad1ListaPar = (lista.length / 2) - 1
         const indexMitad2ListaPar = lista.length / 2
@@ -17,12 +17,12 @@ PromedioMedianaModa.calcularMediana = function calcularMediana(listaDesordenada)
         listaMitades.push(lista[indexMitad1ListaPar])
         listaMitades.push(lista[indexMitad2ListaPar])
         
-        calcularPromedioConReduce(listaMitades)
+        return PromedioMedianaModa.calcularPromedioConReduce(listaMitades)
     }
     else{
-        const indexMitadListaImpar = Math.floor(lista.length/2) // Math.floor() -- les quita los desimales a los numeros sin redondear
+        indexMitadListaImpar = Math.floor(lista.length/2) // Math.floor() -- les quita los desimales a los numeros sin redondear
         console.log(indexMitadListaImpar)
-        console.log(lista[indexMitadListaImpar]) 
+        return lista[indexMitadListaImpar]
     }
 }
 //---------------------------------------------------------------
@@ -66,7 +66,7 @@ PromedioMedianaModa.calcularPromedioConReduce = function calcularPromedioConRedu
     // reduce, pasara por todo el array aplicando la funcion con dos parametros obligatorios acumulador y nuevoValor 
     // se le puede ponder otros parametros mas como el indice y otros
     const promedio = sumaLista / lista.length
-    console.log(promedio)
+    return promedio
 }
 
 PromedioMedianaModa.calcularPromedioConFor = function calcularPromedioConFor(lista){
