@@ -30,7 +30,7 @@ PromedioMedianaModa.calcularMediana = function calcularMediana(listaDesordenada)
 PromedioMedianaModa.calcularModa = function calcularModa(lista){
     const listaCount = {}
     
-    for (let i = 0; i < lista.length ; i++){    //lo convierte en un objeto deacuerdo a cunato se esta repitiendo
+    for (let i = 0; i < lista.length ; i++){    //lo convierte en un objeto deacuerdo a cuanto se esta repitiendo
         const elemento = lista[i]
         if(listaCount[elemento]){
             listaCount[elemento] += 1
