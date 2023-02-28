@@ -14,12 +14,16 @@ Object.freeze() //establece (configurable = false) y (writable = fasle) en todas
 
 //------------------------------------------------------------------------
 
-Object.keys(juan)               
-Object.getOwnPropertyNames(juan)
-Object.entries(juan)
+Object.keys(juan)   //nos devueleve una lista con todos los nombres de nuestro objeto
+Object.getOwnPropertyNames(juan)     //(similar a keys) nos devueleve una lista con todos los nombres de nuestro objeto
+Object.entries(juan)    //nos devuenve una array de array donde en cada array posicion 0 estara el nombre(keys) y el la posicion 1 estara el valor(value)
+                        // cuando todo se mueve con entries --this-- ya no es el Objecto (tener encuenta cuando se trabaja con funicones)
 
-Object.defineProperty(juan, "navigator",{
-    value: "Chrome",
+Object.getOwnPropertyDescriptors(juan)  //metodo Static -- devuelve las propiedades del objetct (nombre de la propiedad: un object)
+                                        //y dentro hay nuevos atributos para limitar la modificasion del objeto o atributos
+
+Object.defineProperty(juan, "navigator",{   //crea una propiedad
+    value: "Chrome", 
     enumerable: false,  //Object.keys(juan) -- no mostrara las propiedades que fueron definidas con el atributo (enumerable = false)
                         //getOwnPropertyNames(juan) --si mostrara las propiedades que fueron definidas con el atributo (enumerable = false)
     writable: true,
